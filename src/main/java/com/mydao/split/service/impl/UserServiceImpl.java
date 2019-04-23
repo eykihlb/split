@@ -4,6 +4,8 @@ import com.mydao.split.dao.UserMapper;
 import com.mydao.split.entity.User;
 import com.mydao.split.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -18,19 +20,18 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
+
+    @CacheEvict(value="user", key="'user'+#id.toString()")
     @Override
     public int deleteByPrimaryKey(Long id) {
-        return 0;
+        return userMapper.deleteByPrimaryKey(id);
     }
 
+    @CachePut(value = "user",key = "'user'+#record.id.toString()",unless = "#record eq null")
     @Override
-    public int insert(User record) {
-        return 0;
-    }
-
-    @Override
-    public int insertSelective(User record) {
-        return 0;
+    public User insertSelective(User record) {
+        userMapper.insertSelective(record);
+        return record;
     }
 
     @Cacheable(value="user",key="'user'+#id.toString()")
@@ -40,13 +41,10 @@ public class UserServiceImpl implements UserService {
         return userMapper.selectByPrimaryKey(id);
     }
 
+    @CachePut(value = "user",key = "'user'+#record.id.toString()",unless = "#record eq null")
     @Override
-    public int updateByPrimaryKeySelective(User record) {
-        return 0;
-    }
-
-    @Override
-    public int updateByPrimaryKey(User record) {
-        return 0;
+    public User updateByPrimaryKeySelective(User record) {
+        userMapper.updateByPrimaryKeySelective(record);
+        return record;
     }
 }

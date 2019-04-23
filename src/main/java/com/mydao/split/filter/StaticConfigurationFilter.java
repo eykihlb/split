@@ -13,7 +13,6 @@ public class StaticConfigurationFilter extends WebMvcConfigurerAdapter {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
         registry.addResourceHandler("/views/**").addResourceLocations("classpath:/templates/");
-        registry.addResourceHandler("/").addResourceLocations("classpath:/templates/index.html");
         super.addResourceHandlers(registry);
     }
 }
