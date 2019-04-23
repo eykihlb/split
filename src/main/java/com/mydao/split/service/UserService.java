@@ -1,6 +1,6 @@
 package com.mydao.split.service;
 
-import com.mydao.split.entity.User;
+import com.mydao.split.entity.SplitUser;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,11 +12,13 @@ import org.springframework.stereotype.Component;
 @Component
 public interface UserService {
 
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(String id);
 
-    User insertSelective(User record);
+    SplitUser insertSelective(SplitUser record);
 
-    User selectByPrimaryKey(Long id);
+    SplitUser selectByPrimaryKey(String id);
 
-    User updateByPrimaryKeySelective(User record);
+    SplitUser updateByPrimaryKeySelective(SplitUser record);
+
+    SplitUser getByUserName(String userName);
 }

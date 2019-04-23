@@ -1,7 +1,7 @@
 package com.mydao.split.service.impl;
 
-import com.mydao.split.dao.UserMapper;
-import com.mydao.split.entity.User;
+import com.mydao.split.dao.SplitUserMapper;
+import com.mydao.split.entity.SplitUser;
 import com.mydao.split.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -19,32 +19,39 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserMapper userMapper;
+    private SplitUserMapper splitUserMapper;
+
+    @Cacheable(value="user",key="'user'+#user.userName.toString()")
+    @Override
+    public SplitUser getByUserName(String userName) {
+        return splitUserMapper.getByUserName(userName);
+
+    }
 
     @CacheEvict(value="user", key="'user'+#id.toString()")
     @Override
-    public int deleteByPrimaryKey(Long id) {
-        return userMapper.deleteByPrimaryKey(id);
+    public int deleteByPrimaryKey(String id) {
+        return splitUserMapper.deleteByPrimaryKey(id);
     }
 
     @CachePut(value = "user",key = "'user'+#record.id.toString()",unless = "#record eq null")
     @Override
-    public User insertSelective(User record) {
-        userMapper.insertSelective(record);
+    public SplitUser insertSelective(SplitUser record) {
+        splitUserMapper.insertSelective(record);
         return record;
     }
 
     @Cacheable(value="user",key="'user'+#id.toString()")
     @Override
-    public User selectByPrimaryKey(Long id) {
+    public SplitUser selectByPrimaryKey(String id) {
         System.out.println("走的数据库");
-        return userMapper.selectByPrimaryKey(id);
+        return splitUserMapper.selectByPrimaryKey(id);
     }
 
     @CachePut(value = "user",key = "'user'+#record.id.toString()",unless = "#record eq null")
     @Override
-    public User updateByPrimaryKeySelective(User record) {
-        userMapper.updateByPrimaryKeySelective(record);
+    public SplitUser updateByPrimaryKeySelective(SplitUser record) {
+        splitUserMapper.updateByPrimaryKeySelective(record);
         return record;
     }
 }
