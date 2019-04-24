@@ -1,6 +1,8 @@
 package com.mydao.split.entity;
 
-public class SplitUser {
+import java.io.Serializable;
+
+public class SplitUser implements Serializable{
     private String id;
 
     private String userName;

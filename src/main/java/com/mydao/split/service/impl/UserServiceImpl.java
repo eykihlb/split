@@ -21,11 +21,11 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private SplitUserMapper splitUserMapper;
 
-    @Cacheable(value="user",key="'user'+#user.userName.toString()")
+    @Cacheable(value="user",key="'user'+#userName.toString()")
     @Override
     public SplitUser getByUserName(String userName) {
-        return splitUserMapper.getByUserName(userName);
-
+        SplitUser user = splitUserMapper.getByUserName(userName);
+        return user;
     }
 
     @CacheEvict(value="user", key="'user'+#id.toString()")
