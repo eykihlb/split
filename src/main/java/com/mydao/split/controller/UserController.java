@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -41,7 +42,7 @@ public class UserController {
      * @throws Exception
      */
     @GetMapping("/login")
-    public String login(@RequestParam String userName,@RequestParam String passWord) throws Exception{
+    public String login(@RequestParam String userName, @RequestParam String passWord, HttpSession session) throws Exception{
         Map<String,Object> resultMap = new HashMap<>();
         SplitUser user = userService.getByUserName(userName);
         if (user!=null){
@@ -49,6 +50,7 @@ public class UserController {
                 resultMap.put("status",1);
                 resultMap.put("msg","登陆成功！");
                 resultMap.put("data",user);
+                session.setAttribute("user",user);
             }else{
                 resultMap.put("status",0);
                 resultMap.put("msg","密码错误！");
@@ -60,6 +62,14 @@ public class UserController {
         return om.writeValueAsString(resultMap);
     }
 
+    @GetMapping("/loginout")
+    public String loginout(HttpSession session) throws Exception{
+        Map<String,Object> resultMap = new HashMap<>();
+        session.removeAttribute("user");
+        resultMap.put("status",1);
+        resultMap.put("msg","登出成功！");
+        return om.writeValueAsString(resultMap);
+    }
     /**
      * insert
      * @param user
