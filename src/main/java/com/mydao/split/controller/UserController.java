@@ -129,7 +129,7 @@ public class UserController {
      * @return
      * @throws Exception
      */
-    @GetMapping("/list")
+    @PostMapping("/list")
     public String findList(@RequestBody SplitUser splitUser) throws Exception{
         Map<String,Object> paramMap = new HashMap<>();
         Map<String,Object> resultMap = new HashMap<>();
