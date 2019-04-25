@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mydao.split.dao.DataTodMapper">
+  <resultMap id="BaseResultMap" type="com.mydao.split.entity.DataTod">
+    <id column="LANENO" jdbcType="CHAR" property="laneno" />
+    <id column="NETNO" jdbcType="CHAR" property="netno" />
+    <id column="SITENO" jdbcType="CHAR" property="siteno" />
+    <id column="SLIPNO" jdbcType="CHAR" property="slipno" />
+    <id column="STAFFNO" jdbcType="CHAR" property="staffno" />
+    <id column="TODDATE" jdbcType="TIMESTAMP" property="toddate" />
+    <result column="LANETYPE" jdbcType="CHAR" property="lanetype" />
+    <result column="STAFFNAME" jdbcType="CHAR" property="staffname" />
+    <result column="CASHDECLARE" jdbcType="DECIMAL" property="cashdeclare" />
+    <result column="CASHCOMPUTE" jdbcType="DECIMAL" property="cashcompute" />
+    <result column="IOUDECLARE" jdbcType="DECIMAL" property="ioudeclare" />
+    <result column="IOUCOMPUTE" jdbcType="DECIMAL" property="ioucompute" />
+    <result column="CASHDIFF" jdbcType="DECIMAL" property="cashdiff" />
+    <result column="IOUDIFF" jdbcType="DECIMAL" property="ioudiff" />
+    <result column="TRAFFICTOTAL" jdbcType="DECIMAL" property="traffictotal" />
+    <result column="BANKINDATE" jdbcType="TIMESTAMP" property="bankindate" />
+    <result column="TODCPT01" jdbcType="DECIMAL" property="todcpt01" />
+    <result column="TODCPT02" jdbcType="DECIMAL" property="todcpt02" />
+    <result column="TODCPT03" jdbcType="DECIMAL" property="todcpt03" />
+    <result column="TODCPT04" jdbcType="DECIMAL" property="todcpt04" />
+    <result column="TODCPT05" jdbcType="DECIMAL" property="todcpt05" />
+    <result column="TODCPT06" jdbcType="DECIMAL" property="todcpt06" />
+    <result column="TODCPT07" jdbcType="DECIMAL" property="todcpt07" />
+    <result column="TODCPT08" jdbcType="DECIMAL" property="todcpt08" />
+    <result column="TODCPT09" jdbcType="DECIMAL" property="todcpt09" />
+    <result column="TODCPT10" jdbcType="DECIMAL" property="todcpt10" />
+    <result column="TODCPT11" jdbcType="DECIMAL" property="todcpt11" />
+    <result column="TODCPT12" jdbcType="DECIMAL" property="todcpt12" />
+    <result column="TODCPT13" jdbcType="DECIMAL" property="todcpt13" />
+    <result column="TODCPT14" jdbcType="DECIMAL" property="todcpt14" />
+    <result column="TODCPT15" jdbcType="DECIMAL" property="todcpt15" />
+    <result column="TODCPT16" jdbcType="DECIMAL" property="todcpt16" />
+    <result column="TODCPT17" jdbcType="DECIMAL" property="todcpt17" />
+    <result column="TODCPT18" jdbcType="DECIMAL" property="todcpt18" />
+    <result column="TODCPT19" jdbcType="DECIMAL" property="todcpt19" />
+    <result column="TODCPT20" jdbcType="DECIMAL" property="todcpt20" />
+    <result column="TODCPT21" jdbcType="DECIMAL" property="todcpt21" />
+    <result column="TODCPT22" jdbcType="DECIMAL" property="todcpt22" />
+    <result column="TODCPT23" jdbcType="DECIMAL" property="todcpt23" />
+    <result column="TODCPT24" jdbcType="DECIMAL" property="todcpt24" />
+    <result column="TODCPT25" jdbcType="DECIMAL" property="todcpt25" />
+    <result column="FEEFIXINVOICE" jdbcType="DECIMAL" property="feefixinvoice" />
+    <result column="FEEBADINVOICE" jdbcType="DECIMAL" property="feebadinvoice" />
+    <result column="CFLAG" jdbcType="CHAR" property="cflag" />
+    <result column="TRANSLATEDATE" jdbcType="TIMESTAMP" property="translatedate" />
+    <result column="CFLAG1" jdbcType="CHAR" property="cflag1" />
+    <result column="CFLAG2" jdbcType="CHAR" property="cflag2" />
+    <result column="STAFF_ID" property="staffId" />
+    <result column="SHIFT_NAME" property="shiftName" />
+    <result column="SHIFTNO" property="shiftNo" />
+    <result column="INVOICE_TOTAL" property="invoiceTotal" />
+    <result column="INVOICE_CASH" property="invoiceCash" />
+    <result column="FIX_COUNT" property="fixCount" />
+    <result column="FIX_CASH" property="fixCash" />
+    <result column="FARE_WEIZHAOLING" property="fareWeizhaoling" />
+    <result column="BAD_CASH" property="badCash" />
+    <result column="BAD_COUNT" property="badCount" />
+    <result column="QK_Fare" property="qkFare" />
+    <result column="COMP_FARE" property="compFare" />
+    <result column="POST_FARE" property="postFare" />
+    <result column="DIFF_FARE" property="diffFare" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    LANENO, NETNO, SITENO, SLIPNO, STAFFNO, TODDATE, LANETYPE, STAFFNAME, CASHDECLARE, 
+    CASHCOMPUTE, IOUDECLARE, IOUCOMPUTE, CASHDIFF, IOUDIFF, TRAFFICTOTAL, BANKINDATE, 
+    TODCPT01, TODCPT02, TODCPT03, TODCPT04, TODCPT05, TODCPT06, TODCPT07, TODCPT08, TODCPT09, 
+    TODCPT10, TODCPT11, TODCPT12, TODCPT13, TODCPT14, TODCPT15, TODCPT16, TODCPT17, TODCPT18, 
+    TODCPT19, TODCPT20, TODCPT21, TODCPT22, TODCPT23, TODCPT24, TODCPT25, FEEFIXINVOICE, 
+    FEEBADINVOICE, CFLAG, TRANSLATEDATE, CFLAG1, CFLAG2
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.mydao.split.entity.DataTodKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from DATA_TOD
+    where LANENO = #{laneno,jdbcType=CHAR}
+      and NETNO = #{netno,jdbcType=CHAR}
+      and SITENO = #{siteno,jdbcType=CHAR}
+      and SLIPNO = #{slipno,jdbcType=CHAR}
+      and STAFFNO = #{staffno,jdbcType=CHAR}
+      and TODDATE = #{toddate,jdbcType=TIMESTAMP}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.mydao.split.entity.DataTodKey">
+    delete from DATA_TOD
+    where LANENO = #{laneno,jdbcType=CHAR}
+      and NETNO = #{netno,jdbcType=CHAR}
+      and SITENO = #{siteno,jdbcType=CHAR}
+      and SLIPNO = #{slipno,jdbcType=CHAR}
+      and STAFFNO = #{staffno,jdbcType=CHAR}
+      and TODDATE = #{toddate,jdbcType=TIMESTAMP}
+  </delete>
+  <insert id="insertSelective" parameterType="com.mydao.split.entity.DataTod">
+    insert into DATA_TOD
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="laneno != null">
+        LANENO,
+      </if>
+      <if test="netno != null">
+        NETNO,
+      </if>
+      <if test="siteno != null">
+        SITENO,
+      </if>
+      <if test="slipno != null">
+        SLIPNO,
+      </if>
+      <if test="staffno != null">
+        STAFFNO,
+      </if>
+      <if test="toddate != null">
+        TODDATE,
+      </if>
+      <if test="lanetype != null">
+        LANETYPE,
+      </if>
+      <if test="staffname != null">
+        STAFFNAME,
+      </if>
+      <if test="cashdeclare != null">
+        CASHDECLARE,
+      </if>
+      <if test="cashcompute != null">
+        CASHCOMPUTE,
+      </if>
+      <if test="ioudeclare != null">
+        IOUDECLARE,
+      </if>
+      <if test="ioucompute != null">
+        IOUCOMPUTE,
+      </if>
+      <if test="cashdiff != null">
+        CASHDIFF,
+      </if>
+      <if test="ioudiff != null">
+        IOUDIFF,
+      </if>
+      <if test="traffictotal != null">
+        TRAFFICTOTAL,
+      </if>
+      <if test="bankindate != null">
+        BANKINDATE,
+      </if>
+      <if test="todcpt01 != null">
+        TODCPT01,
+      </if>
+      <if test="todcpt02 != null">
+        TODCPT02,
+      </if>
+      <if test="todcpt03 != null">
+        TODCPT03,
+      </if>
+      <if test="todcpt04 != null">
+        TODCPT04,
+      </if>
+      <if test="todcpt05 != null">
+        TODCPT05,
+      </if>
+      <if test="todcpt06 != null">
+        TODCPT06,
+      </if>
+      <if test="todcpt07 != null">
+        TODCPT07,
+      </if>
+      <if test="todcpt08 != null">
+        TODCPT08,
+      </if>
+      <if test="todcpt09 != null">
+        TODCPT09,
+      </if>
+      <if test="todcpt10 != null">
+        TODCPT10,
+      </if>
+      <if test="todcpt11 != null">
+        TODCPT11,
+      </if>
+      <if test="todcpt12 != null">
+        TODCPT12,
+      </if>
+      <if test="todcpt13 != null">
+        TODCPT13,
+      </if>
+      <if test="todcpt14 != null">
+        TODCPT14,
+      </if>
+      <if test="todcpt15 != null">
+        TODCPT15,
+      </if>
+      <if test="todcpt16 != null">
+        TODCPT16,
+      </if>
+      <if test="todcpt17 != null">
+        TODCPT17,
+      </if>
+      <if test="todcpt18 != null">
+        TODCPT18,
+      </if>
+      <if test="todcpt19 != null">
+        TODCPT19,
+      </if>
+      <if test="todcpt20 != null">
+        TODCPT20,
+      </if>
+      <if test="todcpt21 != null">
+        TODCPT21,
+      </if>
+      <if test="todcpt22 != null">
+        TODCPT22,
+      </if>
+      <if test="todcpt23 != null">
+        TODCPT23,
+      </if>
+      <if test="todcpt24 != null">
+        TODCPT24,
+      </if>
+      <if test="todcpt25 != null">
+        TODCPT25,
+      </if>
+      <if test="feefixinvoice != null">
+        FEEFIXINVOICE,
+      </if>
+      <if test="feebadinvoice != null">
+        FEEBADINVOICE,
+      </if>
+      <if test="cflag != null">
+        CFLAG,
+      </if>
+      <if test="translatedate != null">
+        TRANSLATEDATE,
+      </if>
+      <if test="cflag1 != null">
+        CFLAG1,
+      </if>
+      <if test="cflag2 != null">
+        CFLAG2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="laneno != null">
+        #{laneno,jdbcType=CHAR},
+      </if>
+      <if test="netno != null">
+        #{netno,jdbcType=CHAR},
+      </if>
+      <if test="siteno != null">
+        #{siteno,jdbcType=CHAR},
+      </if>
+      <if test="slipno != null">
+        #{slipno,jdbcType=CHAR},
+      </if>
+      <if test="staffno != null">
+        #{staffno,jdbcType=CHAR},
+      </if>
+      <if test="toddate != null">
+        #{toddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lanetype != null">
+        #{lanetype,jdbcType=CHAR},
+      </if>
+      <if test="staffname != null">
+        #{staffname,jdbcType=CHAR},
+      </if>
+      <if test="cashdeclare != null">
+        #{cashdeclare,jdbcType=DECIMAL},
+      </if>
+      <if test="cashcompute != null">
+        #{cashcompute,jdbcType=DECIMAL},
+      </if>
+      <if test="ioudeclare != null">
+        #{ioudeclare,jdbcType=DECIMAL},
+      </if>
+      <if test="ioucompute != null">
+        #{ioucompute,jdbcType=DECIMAL},
+      </if>
+      <if test="cashdiff != null">
+        #{cashdiff,jdbcType=DECIMAL},
+      </if>
+      <if test="ioudiff != null">
+        #{ioudiff,jdbcType=DECIMAL},
+      </if>
+      <if test="traffictotal != null">
+        #{traffictotal,jdbcType=DECIMAL},
+      </if>
+      <if test="bankindate != null">
+        #{bankindate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="todcpt01 != null">
+        #{todcpt01,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt02 != null">
+        #{todcpt02,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt03 != null">
+        #{todcpt03,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt04 != null">
+        #{todcpt04,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt05 != null">
+        #{todcpt05,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt06 != null">
+        #{todcpt06,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt07 != null">
+        #{todcpt07,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt08 != null">
+        #{todcpt08,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt09 != null">
+        #{todcpt09,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt10 != null">
+        #{todcpt10,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt11 != null">
+        #{todcpt11,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt12 != null">
+        #{todcpt12,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt13 != null">
+        #{todcpt13,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt14 != null">
+        #{todcpt14,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt15 != null">
+        #{todcpt15,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt16 != null">
+        #{todcpt16,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt17 != null">
+        #{todcpt17,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt18 != null">
+        #{todcpt18,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt19 != null">
+        #{todcpt19,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt20 != null">
+        #{todcpt20,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt21 != null">
+        #{todcpt21,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt22 != null">
+        #{todcpt22,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt23 != null">
+        #{todcpt23,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt24 != null">
+        #{todcpt24,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt25 != null">
+        #{todcpt25,jdbcType=DECIMAL},
+      </if>
+      <if test="feefixinvoice != null">
+        #{feefixinvoice,jdbcType=DECIMAL},
+      </if>
+      <if test="feebadinvoice != null">
+        #{feebadinvoice,jdbcType=DECIMAL},
+      </if>
+      <if test="cflag != null">
+        #{cflag,jdbcType=CHAR},
+      </if>
+      <if test="translatedate != null">
+        #{translatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cflag1 != null">
+        #{cflag1,jdbcType=CHAR},
+      </if>
+      <if test="cflag2 != null">
+        #{cflag2,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mydao.split.entity.DataTod">
+    update DATA_TOD
+    <set>
+      <if test="lanetype != null">
+        LANETYPE = #{lanetype,jdbcType=CHAR},
+      </if>
+      <if test="staffname != null">
+        STAFFNAME = #{staffname,jdbcType=CHAR},
+      </if>
+      <if test="cashdeclare != null">
+        CASHDECLARE = #{cashdeclare,jdbcType=DECIMAL},
+      </if>
+      <if test="cashcompute != null">
+        CASHCOMPUTE = #{cashcompute,jdbcType=DECIMAL},
+      </if>
+      <if test="ioudeclare != null">
+        IOUDECLARE = #{ioudeclare,jdbcType=DECIMAL},
+      </if>
+      <if test="ioucompute != null">
+        IOUCOMPUTE = #{ioucompute,jdbcType=DECIMAL},
+      </if>
+      <if test="cashdiff != null">
+        CASHDIFF = #{cashdiff,jdbcType=DECIMAL},
+      </if>
+      <if test="ioudiff != null">
+        IOUDIFF = #{ioudiff,jdbcType=DECIMAL},
+      </if>
+      <if test="traffictotal != null">
+        TRAFFICTOTAL = #{traffictotal,jdbcType=DECIMAL},
+      </if>
+      <if test="bankindate != null">
+        BANKINDATE = #{bankindate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="todcpt01 != null">
+        TODCPT01 = #{todcpt01,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt02 != null">
+        TODCPT02 = #{todcpt02,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt03 != null">
+        TODCPT03 = #{todcpt03,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt04 != null">
+        TODCPT04 = #{todcpt04,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt05 != null">
+        TODCPT05 = #{todcpt05,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt06 != null">
+        TODCPT06 = #{todcpt06,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt07 != null">
+        TODCPT07 = #{todcpt07,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt08 != null">
+        TODCPT08 = #{todcpt08,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt09 != null">
+        TODCPT09 = #{todcpt09,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt10 != null">
+        TODCPT10 = #{todcpt10,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt11 != null">
+        TODCPT11 = #{todcpt11,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt12 != null">
+        TODCPT12 = #{todcpt12,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt13 != null">
+        TODCPT13 = #{todcpt13,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt14 != null">
+        TODCPT14 = #{todcpt14,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt15 != null">
+        TODCPT15 = #{todcpt15,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt16 != null">
+        TODCPT16 = #{todcpt16,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt17 != null">
+        TODCPT17 = #{todcpt17,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt18 != null">
+        TODCPT18 = #{todcpt18,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt19 != null">
+        TODCPT19 = #{todcpt19,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt20 != null">
+        TODCPT20 = #{todcpt20,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt21 != null">
+        TODCPT21 = #{todcpt21,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt22 != null">
+        TODCPT22 = #{todcpt22,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt23 != null">
+        TODCPT23 = #{todcpt23,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt24 != null">
+        TODCPT24 = #{todcpt24,jdbcType=DECIMAL},
+      </if>
+      <if test="todcpt25 != null">
+        TODCPT25 = #{todcpt25,jdbcType=DECIMAL},
+      </if>
+      <if test="feefixinvoice != null">
+        FEEFIXINVOICE = #{feefixinvoice,jdbcType=DECIMAL},
+      </if>
+      <if test="feebadinvoice != null">
+        FEEBADINVOICE = #{feebadinvoice,jdbcType=DECIMAL},
+      </if>
+      <if test="cflag != null">
+        CFLAG = #{cflag,jdbcType=CHAR},
+      </if>
+      <if test="translatedate != null">
+        TRANSLATEDATE = #{translatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cflag1 != null">
+        CFLAG1 = #{cflag1,jdbcType=CHAR},
+      </if>
+      <if test="cflag2 != null">
+        CFLAG2 = #{cflag2,jdbcType=CHAR},
+      </if>
+    </set>
+    where LANENO = #{laneno,jdbcType=CHAR}
+      and NETNO = #{netno,jdbcType=CHAR}
+      and SITENO = #{siteno,jdbcType=CHAR}
+      and SLIPNO = #{slipno,jdbcType=CHAR}
+      and STAFFNO = #{staffno,jdbcType=CHAR}
+      and TODDATE = #{toddate,jdbcType=TIMESTAMP}
+  </update>
+
+  <select id="selectBySiteNoAndShiftNo" parameterType="java.util.Map" resultType="com.mydao.split.entity.DataTod">
+    SELECT
+    A.*
+    FROM
+    (SELECT
+    DATA_TOD.STAFFNO STAFF_ID,--工号
+    DATA_JOB.SHIFTNAME SHIFT_NAME,--班次
+    DATA_JOB.SHIFTNO,
+    NVL(SUM(DATA_JOB.JOBCPT04),0) INVOICE_TOTAL,--机打票数量
+    TO_CHAR(NVL(SUM(DATA_JOB.Revenuetotal),0),'FM99999999990.00') INVOICE_CASH, --机打票金额
+    NVL(AVG(TODCPT04),0) FIX_COUNT,--定额票数量
+    TO_CHAR(NVL(AVG(FEEFIXINVOICE),0),'FM99999999990.00') FIX_CASH,--定额票金额
+    TO_CHAR(NVL(AVG(TODCPT25),0),'FM99999999990.00') FARE_WEIZHAOLING,--特殊金额 未找零
+    TO_CHAR(NVL(AVG(FEEBADINVOICE),0),'FM99999999990.00') BAD_CASH,--特殊金额废票
+    NVL(AVG(TODCPT05),0) BAD_COUNT,--特殊金额废票数量
+    TO_CHAR(0,'FM99999999990.00') QK_Fare,--欠款金额
+    TO_CHAR(NVL(AVG(CASHCOMPUTE),0),'FM99999999990.00') COMP_FARE,--应收现金
+    TO_CHAR(NVL(AVG(CASHDECLARE),0),'FM99999999990.00') POST_FARE, --实收现金
+    TO_CHAR(NVL(AVG(CASHDIFF),0),'FM99999999990.00') DIFF_FARE --差额
+    FROM
+    DATA_TOD,
+    (SELECT * FROM CONST_SITE START WITH NETSITENO = #{netSiteNo} CONNECT BY PRIOR NETSITENO = PARENTNETSITENO) SITEPLAZALIST,
+    (SELECT T1.*,NVL(T2.SHIFTDESC,'未知') SHIFTNAME FROM DATA_JOB T1,CODE_SHIFT T2 WHERE T1.SHIFTNO=T2.SHIFTNO(+)) DATA_JOB
+    WHERE
+    SITEPLAZALIST.SITENO = DATA_TOD.SITENO AND
+    SITEPLAZALIST.NETNO = DATA_TOD.NETNO AND
+    DATA_TOD.STAFFNO=DATA_JOB.STAFFNO AND
+    DATA_TOD.TODDATE=DATA_JOB.TODDATE AND
+    DATA_TOD.SLIPNO=DATA_JOB.TODNO and
+    substr(DATA_JOB.FARETBLTIMENO,1,10) = #{todDate}
+    <if test="shiftNo != null and shiftNo != null">
+      and DATA_JOB.SHIFTNO = #{shiftNo}
+    </if>
+    GROUP BY
+    DATA_JOB.SHIFTNO,
+    DATA_JOB.SHIFTNAME,
+    DATA_TOD.STAFFNO,
+    DATA_TOD.STAFFNAME
+    ORDER BY
+    DATA_JOB.SHIFTNO,
+    DATA_TOD.STAFFNO) A
+  </select>
+</mapper>

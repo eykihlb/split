@@ -7,9 +7,11 @@
     <result column="PASS_WORD" property="passWord" jdbcType="VARCHAR" />
     <result column="USER_TYPE" property="userType" jdbcType="VARCHAR" />
     <result column="NET_SITE_NO" property="netSiteNo" jdbcType="VARCHAR" />
+    <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+    <result column="site_ip" property="siteIp" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    ID, USER_NAME, PASS_WORD, USER_TYPE, NET_SITE_NO
+    ID, USER_NAME, PASS_WORD, USER_TYPE, NET_SITE_NO,nick_name,site_ip
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
@@ -39,6 +41,12 @@
       <if test="netSiteNo != null" >
         NET_SITE_NO,
       </if>
+      <if test="nickName != null" >
+        nick_name,
+      </if>
+      <if test="siteIp != null" >
+        site_ip,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -55,6 +63,12 @@
       </if>
       <if test="netSiteNo != null" >
         #{netSiteNo,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null" >
+        #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="siteIp != null" >
+        #{siteIp,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -73,11 +87,46 @@
       <if test="netSiteNo != null" >
         NET_SITE_NO = #{netSiteNo,jdbcType=VARCHAR},
       </if>
+      <if test="nickName != null" >
+        nick_name = #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="siteIp != null" >
+        site_ip = #{siteIp,jdbcType=VARCHAR},
+      </if>
     </set>
     where ID = #{id,jdbcType=VARCHAR}
   </update>
 
   <select id="getByUserName" resultMap="BaseResultMap" parameterType="java.lang.String">
     select * from SPLIT_USER where USER_NAME = #{userName}
+  </select>
+
+  <select id="findList" parameterType="java.util.Map" resultMap="BaseResultMap">
+    select xxx.* from (
+      select xx.*,rownum as rn from (
+        select x.* from split_user x where 1 = 1
+        <if test="userName != null and userName != ''">
+          and x.nick_name like '%'||#{nickName}||'%'
+        </if>
+        <if test="userType != null and userType != ''">
+          and x.user_type = #{userType}
+        </if>
+        <if test="netSiteNo != null and netSiteNo != ''">
+          and x.net_site_no = #{netSiteNo}
+        </if>
+      ) xx
+    ) xxx where xxx.rn BETWEEN (#{page}-1)*#{limit}+1 and #{page}*#{limit}
+  </select>
+  <select id="count" parameterType="java.util.Map" resultType="java.lang.Integer">
+    select count(1) from split_user x where 1 = 1
+    <if test="userName != null and userName != ''">
+      and x.nick_name like '%'||#{nickName}||'%'
+    </if>
+    <if test="userType != null and userType != ''">
+      and x.user_type = #{userType}
+    </if>
+    <if test="netSiteNo != null and netSiteNo != ''">
+      and x.net_site_no = #{netSiteNo}
+    </if>
   </select>
 </mapper>

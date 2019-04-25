@@ -3,6 +3,9 @@ package com.mydao.split.service;
 import com.mydao.split.entity.SplitUser;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @program: redis-demo
  * @description:
@@ -21,4 +24,6 @@ public interface UserService {
     SplitUser updateByPrimaryKeySelective(SplitUser record);
 
     SplitUser getByUserName(String userName);
+
+    Map<String,Object> findList(Map<String,Object> map);
 }

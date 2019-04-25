@@ -9,6 +9,10 @@ import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * @program: redis-demo
  * @description:
@@ -26,6 +30,14 @@ public class UserServiceImpl implements UserService {
     public SplitUser getByUserName(String userName) {
         SplitUser user = splitUserMapper.getByUserName(userName);
         return user;
+    }
+
+    @Override
+    public Map<String,Object> findList(Map<String, Object> map) {
+        Map<String,Object> resultMap = new HashMap<>();
+        resultMap.put("list",splitUserMapper.findList(map));
+        resultMap.put("count",splitUserMapper.count(map));
+        return resultMap;
     }
 
     @CacheEvict(value="user", key="'user'+#id.toString()")

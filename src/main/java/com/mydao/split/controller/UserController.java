@@ -112,4 +112,26 @@ public class UserController {
         }
         return om.writeValueAsString(resultMap);
     }
+
+    /**
+     * userList
+     * @param splitUser
+     * @return
+     * @throws Exception
+     */
+    @GetMapping("/list")
+    public String findList(@RequestBody SplitUser splitUser) throws Exception{
+        Map<String,Object> paramMap = new HashMap<>();
+        Map<String,Object> resultMap = new HashMap<>();
+        paramMap.put("page",splitUser.getPage());
+        paramMap.put("limit",splitUser.getLimit());
+        paramMap.put("nickName",splitUser.getNickName());
+        paramMap.put("userType",splitUser.getUserType());
+        paramMap.put("netSiteNo",splitUser.getNetSiteNo());
+        Map<String,Object> map = userService.findList(paramMap);
+        resultMap.put("status",1);
+        resultMap.put("msg","success!");
+        resultMap.put("data",map);
+        return  om.writeValueAsString(resultMap);
+    }
 }

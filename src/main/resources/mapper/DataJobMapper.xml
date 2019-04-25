@@ -1,0 +1,1196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mydao.split.dao.DataJobMapper">
+  <resultMap id="BaseResultMap" type="com.mydao.split.entity.DataJob">
+    <id column="JOBBEGIN" jdbcType="TIMESTAMP" property="jobbegin" />
+    <id column="JOBNO" jdbcType="CHAR" property="jobno" />
+    <id column="LANENO" jdbcType="CHAR" property="laneno" />
+    <id column="NETNO" jdbcType="CHAR" property="netno" />
+    <id column="STAFFNO" jdbcType="CHAR" property="staffno" />
+    <id column="SITENO" jdbcType="CHAR" property="siteno" />
+    <result column="LANETYPE" jdbcType="CHAR" property="lanetype" />
+    <result column="LANEMODE" jdbcType="CHAR" property="lanemode" />
+    <result column="CETC" jdbcType="CHAR" property="cetc" />
+    <result column="JOBEND" jdbcType="TIMESTAMP" property="jobend" />
+    <result column="SQUADNO" jdbcType="CHAR" property="squadno" />
+    <result column="SHIFTNO" jdbcType="CHAR" property="shiftno" />
+    <result column="STAFFNAME" jdbcType="CHAR" property="staffname" />
+    <result column="TODSTAFFNO" jdbcType="CHAR" property="todstaffno" />
+    <result column="TODDATE" jdbcType="TIMESTAMP" property="toddate" />
+    <result column="TODNO" jdbcType="CHAR" property="todno" />
+    <result column="TRAFFICTOTAL" jdbcType="DECIMAL" property="traffictotal" />
+    <result column="REVENUETOTAL" jdbcType="DECIMAL" property="revenuetotal" />
+    <result column="FARETBLTIMENO" jdbcType="VARCHAR" property="faretbltimeno" />
+    <result column="OPERATEDATE" jdbcType="TIMESTAMP" property="operatedate" />
+    <result column="VIOLOFFDUTY" jdbcType="DECIMAL" property="violoffduty" />
+    <result column="VIOLREVERSING" jdbcType="DECIMAL" property="violreversing" />
+    <result column="VIOLWOODTRUCK" jdbcType="DECIMAL" property="violwoodtruck" />
+    <result column="VIOLTRUE" jdbcType="DECIMAL" property="violtrue" />
+    <result column="VIOLNOMOTIF" jdbcType="DECIMAL" property="violnomotif" />
+    <result column="VIOLINHURRY" jdbcType="DECIMAL" property="violinhurry" />
+    <result column="MOPBLACKLIST" jdbcType="DECIMAL" property="mopblacklist" />
+    <result column="TCSCEXPIRED" jdbcType="DECIMAL" property="tcscexpired" />
+    <result column="MOPEXPIRED" jdbcType="DECIMAL" property="mopexpired" />
+    <result column="JOBCPT01" jdbcType="DECIMAL" property="jobcpt01" />
+    <result column="JOBCPT02" jdbcType="DECIMAL" property="jobcpt02" />
+    <result column="JOBCPT03" jdbcType="DECIMAL" property="jobcpt03" />
+    <result column="JOBCPT04" jdbcType="DECIMAL" property="jobcpt04" />
+    <result column="JOBCPT05" jdbcType="DECIMAL" property="jobcpt05" />
+    <result column="JOBCPT06" jdbcType="DECIMAL" property="jobcpt06" />
+    <result column="JOBCPT07" jdbcType="DECIMAL" property="jobcpt07" />
+    <result column="JOBCPT08" jdbcType="DECIMAL" property="jobcpt08" />
+    <result column="JOBCPT09" jdbcType="DECIMAL" property="jobcpt09" />
+    <result column="JOBCPT10" jdbcType="DECIMAL" property="jobcpt10" />
+    <result column="JOBCPT11" jdbcType="DECIMAL" property="jobcpt11" />
+    <result column="JOBCPT12" jdbcType="DECIMAL" property="jobcpt12" />
+    <result column="JOBCPT13" jdbcType="DECIMAL" property="jobcpt13" />
+    <result column="JOBCPT14" jdbcType="DECIMAL" property="jobcpt14" />
+    <result column="JOBCPT15" jdbcType="DECIMAL" property="jobcpt15" />
+    <result column="JOBCPT16" jdbcType="DECIMAL" property="jobcpt16" />
+    <result column="JOBCPT17" jdbcType="DECIMAL" property="jobcpt17" />
+    <result column="JOBCPT18" jdbcType="DECIMAL" property="jobcpt18" />
+    <result column="JOBCPT19" jdbcType="DECIMAL" property="jobcpt19" />
+    <result column="JOBCPT20" jdbcType="DECIMAL" property="jobcpt20" />
+    <result column="JOBCPT21" jdbcType="DECIMAL" property="jobcpt21" />
+    <result column="JOBCPT22" jdbcType="DECIMAL" property="jobcpt22" />
+    <result column="JOBCPT23" jdbcType="DECIMAL" property="jobcpt23" />
+    <result column="JOBCPT24" jdbcType="DECIMAL" property="jobcpt24" />
+    <result column="JOBCPT25" jdbcType="DECIMAL" property="jobcpt25" />
+    <result column="JOBCPT26" jdbcType="DECIMAL" property="jobcpt26" />
+    <result column="JOBCPT27" jdbcType="DECIMAL" property="jobcpt27" />
+    <result column="JOBCPT28" jdbcType="DECIMAL" property="jobcpt28" />
+    <result column="JOBCPT29" jdbcType="DECIMAL" property="jobcpt29" />
+    <result column="JOBCPT30" jdbcType="DECIMAL" property="jobcpt30" />
+    <result column="JOBCPT31" jdbcType="DECIMAL" property="jobcpt31" />
+    <result column="JOBCPT32" jdbcType="DECIMAL" property="jobcpt32" />
+    <result column="JOBCPT33" jdbcType="DECIMAL" property="jobcpt33" />
+    <result column="JOBCPT34" jdbcType="DECIMAL" property="jobcpt34" />
+    <result column="JOBCPT35" jdbcType="DECIMAL" property="jobcpt35" />
+    <result column="JOBCPT36" jdbcType="DECIMAL" property="jobcpt36" />
+    <result column="JOBCPT37" jdbcType="DECIMAL" property="jobcpt37" />
+    <result column="JOBCPT38" jdbcType="DECIMAL" property="jobcpt38" />
+    <result column="JOBCPT39" jdbcType="DECIMAL" property="jobcpt39" />
+    <result column="JOBCPT40" jdbcType="DECIMAL" property="jobcpt40" />
+    <result column="JOBCPT41" jdbcType="DECIMAL" property="jobcpt41" />
+    <result column="JOBCPT42" jdbcType="DECIMAL" property="jobcpt42" />
+    <result column="JOBCPT43" jdbcType="DECIMAL" property="jobcpt43" />
+    <result column="JOBCPT44" jdbcType="DECIMAL" property="jobcpt44" />
+    <result column="JOBCPT45" jdbcType="DECIMAL" property="jobcpt45" />
+    <result column="JOBCPT46" jdbcType="DECIMAL" property="jobcpt46" />
+    <result column="JOBCPT47" jdbcType="DECIMAL" property="jobcpt47" />
+    <result column="JOBCPT48" jdbcType="DECIMAL" property="jobcpt48" />
+    <result column="JOBCPT49" jdbcType="DECIMAL" property="jobcpt49" />
+    <result column="JOBCPT50" jdbcType="DECIMAL" property="jobcpt50" />
+    <result column="JOBCPT51" jdbcType="DECIMAL" property="jobcpt51" />
+    <result column="JOBCPT52" jdbcType="DECIMAL" property="jobcpt52" />
+    <result column="JOBCPT53" jdbcType="DECIMAL" property="jobcpt53" />
+    <result column="JOBCPT54" jdbcType="DECIMAL" property="jobcpt54" />
+    <result column="JOBCPT55" jdbcType="DECIMAL" property="jobcpt55" />
+    <result column="JOBCPT56" jdbcType="DECIMAL" property="jobcpt56" />
+    <result column="JOBCPT57" jdbcType="DECIMAL" property="jobcpt57" />
+    <result column="JOBCPT58" jdbcType="DECIMAL" property="jobcpt58" />
+    <result column="JOBCPT59" jdbcType="DECIMAL" property="jobcpt59" />
+    <result column="JOBCPT60" jdbcType="DECIMAL" property="jobcpt60" />
+    <result column="CFLAG" jdbcType="CHAR" property="cflag" />
+    <result column="NATIONCOUNT" jdbcType="DECIMAL" property="nationcount" />
+    <result column="JOBCPT61" jdbcType="DECIMAL" property="jobcpt61" />
+    <result column="JOBCPT62" jdbcType="DECIMAL" property="jobcpt62" />
+    <result column="JOBCPT63" jdbcType="DECIMAL" property="jobcpt63" />
+    <result column="JOBCPT64" jdbcType="DECIMAL" property="jobcpt64" />
+    <result column="ISCART" jdbcType="CHAR" property="iscart" />
+    <result column="JOBCPT65" jdbcType="DECIMAL" property="jobcpt65" />
+    <result column="JOBCPT66" jdbcType="DECIMAL" property="jobcpt66" />
+    <result column="JOBCPT67" jdbcType="DECIMAL" property="jobcpt67" />
+    <result column="JOBCPT68" jdbcType="DECIMAL" property="jobcpt68" />
+    <result column="JOBCPT69" jdbcType="DECIMAL" property="jobcpt69" />
+    <result column="JOBCPT70" jdbcType="DECIMAL" property="jobcpt70" />
+    <result column="JOBCPT71" jdbcType="DECIMAL" property="jobcpt71" />
+    <result column="JOBCPT72" jdbcType="DECIMAL" property="jobcpt72" />
+    <result column="JOBCPT73" jdbcType="DECIMAL" property="jobcpt73" />
+    <result column="JOBCPT74" jdbcType="DECIMAL" property="jobcpt74" />
+    <result column="JOBCPT75" jdbcType="DECIMAL" property="jobcpt75" />
+    <result column="JOBCPT76" jdbcType="DECIMAL" property="jobcpt76" />
+    <result column="JOBCPT77" jdbcType="DECIMAL" property="jobcpt77" />
+    <result column="JOBCPT78" jdbcType="DECIMAL" property="jobcpt78" />
+    <result column="JOBCPT79" jdbcType="DECIMAL" property="jobcpt79" />
+    <result column="JOBCPT80" jdbcType="DECIMAL" property="jobcpt80" />
+    <result column="CFLAG1" jdbcType="CHAR" property="cflag1" />
+    <result column="CFLAG2" jdbcType="CHAR" property="cflag2" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    JOBBEGIN, JOBNO, LANENO, NETNO, STAFFNO, SITENO, LANETYPE, LANEMODE, CETC, JOBEND, 
+    SQUADNO, SHIFTNO, STAFFNAME, TODSTAFFNO, TODDATE, TODNO, TRAFFICTOTAL, REVENUETOTAL, 
+    FARETBLTIMENO, OPERATEDATE, VIOLOFFDUTY, VIOLREVERSING, VIOLWOODTRUCK, VIOLTRUE, 
+    VIOLNOMOTIF, VIOLINHURRY, MOPBLACKLIST, TCSCEXPIRED, MOPEXPIRED, JOBCPT01, JOBCPT02, 
+    JOBCPT03, JOBCPT04, JOBCPT05, JOBCPT06, JOBCPT07, JOBCPT08, JOBCPT09, JOBCPT10, JOBCPT11, 
+    JOBCPT12, JOBCPT13, JOBCPT14, JOBCPT15, JOBCPT16, JOBCPT17, JOBCPT18, JOBCPT19, JOBCPT20, 
+    JOBCPT21, JOBCPT22, JOBCPT23, JOBCPT24, JOBCPT25, JOBCPT26, JOBCPT27, JOBCPT28, JOBCPT29, 
+    JOBCPT30, JOBCPT31, JOBCPT32, JOBCPT33, JOBCPT34, JOBCPT35, JOBCPT36, JOBCPT37, JOBCPT38, 
+    JOBCPT39, JOBCPT40, JOBCPT41, JOBCPT42, JOBCPT43, JOBCPT44, JOBCPT45, JOBCPT46, JOBCPT47, 
+    JOBCPT48, JOBCPT49, JOBCPT50, JOBCPT51, JOBCPT52, JOBCPT53, JOBCPT54, JOBCPT55, JOBCPT56, 
+    JOBCPT57, JOBCPT58, JOBCPT59, JOBCPT60, CFLAG, NATIONCOUNT, JOBCPT61, JOBCPT62, JOBCPT63, 
+    JOBCPT64, ISCART, JOBCPT65, JOBCPT66, JOBCPT67, JOBCPT68, JOBCPT69, JOBCPT70, JOBCPT71, 
+    JOBCPT72, JOBCPT73, JOBCPT74, JOBCPT75, JOBCPT76, JOBCPT77, JOBCPT78, JOBCPT79, JOBCPT80, 
+    CFLAG1, CFLAG2
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.mydao.split.entity.DataJobKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from DATA_JOB
+    where JOBBEGIN = #{jobbegin,jdbcType=TIMESTAMP}
+      and JOBNO = #{jobno,jdbcType=CHAR}
+      and LANENO = #{laneno,jdbcType=CHAR}
+      and NETNO = #{netno,jdbcType=CHAR}
+      and STAFFNO = #{staffno,jdbcType=CHAR}
+      and SITENO = #{siteno,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.mydao.split.entity.DataJobKey">
+    delete from DATA_JOB
+    where JOBBEGIN = #{jobbegin,jdbcType=TIMESTAMP}
+      and JOBNO = #{jobno,jdbcType=CHAR}
+      and LANENO = #{laneno,jdbcType=CHAR}
+      and NETNO = #{netno,jdbcType=CHAR}
+      and STAFFNO = #{staffno,jdbcType=CHAR}
+      and SITENO = #{siteno,jdbcType=CHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.mydao.split.entity.DataJob">
+    insert into DATA_JOB
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="jobbegin != null">
+        JOBBEGIN,
+      </if>
+      <if test="jobno != null">
+        JOBNO,
+      </if>
+      <if test="laneno != null">
+        LANENO,
+      </if>
+      <if test="netno != null">
+        NETNO,
+      </if>
+      <if test="staffno != null">
+        STAFFNO,
+      </if>
+      <if test="siteno != null">
+        SITENO,
+      </if>
+      <if test="lanetype != null">
+        LANETYPE,
+      </if>
+      <if test="lanemode != null">
+        LANEMODE,
+      </if>
+      <if test="cetc != null">
+        CETC,
+      </if>
+      <if test="jobend != null">
+        JOBEND,
+      </if>
+      <if test="squadno != null">
+        SQUADNO,
+      </if>
+      <if test="shiftno != null">
+        SHIFTNO,
+      </if>
+      <if test="staffname != null">
+        STAFFNAME,
+      </if>
+      <if test="todstaffno != null">
+        TODSTAFFNO,
+      </if>
+      <if test="toddate != null">
+        TODDATE,
+      </if>
+      <if test="todno != null">
+        TODNO,
+      </if>
+      <if test="traffictotal != null">
+        TRAFFICTOTAL,
+      </if>
+      <if test="revenuetotal != null">
+        REVENUETOTAL,
+      </if>
+      <if test="faretbltimeno != null">
+        FARETBLTIMENO,
+      </if>
+      <if test="operatedate != null">
+        OPERATEDATE,
+      </if>
+      <if test="violoffduty != null">
+        VIOLOFFDUTY,
+      </if>
+      <if test="violreversing != null">
+        VIOLREVERSING,
+      </if>
+      <if test="violwoodtruck != null">
+        VIOLWOODTRUCK,
+      </if>
+      <if test="violtrue != null">
+        VIOLTRUE,
+      </if>
+      <if test="violnomotif != null">
+        VIOLNOMOTIF,
+      </if>
+      <if test="violinhurry != null">
+        VIOLINHURRY,
+      </if>
+      <if test="mopblacklist != null">
+        MOPBLACKLIST,
+      </if>
+      <if test="tcscexpired != null">
+        TCSCEXPIRED,
+      </if>
+      <if test="mopexpired != null">
+        MOPEXPIRED,
+      </if>
+      <if test="jobcpt01 != null">
+        JOBCPT01,
+      </if>
+      <if test="jobcpt02 != null">
+        JOBCPT02,
+      </if>
+      <if test="jobcpt03 != null">
+        JOBCPT03,
+      </if>
+      <if test="jobcpt04 != null">
+        JOBCPT04,
+      </if>
+      <if test="jobcpt05 != null">
+        JOBCPT05,
+      </if>
+      <if test="jobcpt06 != null">
+        JOBCPT06,
+      </if>
+      <if test="jobcpt07 != null">
+        JOBCPT07,
+      </if>
+      <if test="jobcpt08 != null">
+        JOBCPT08,
+      </if>
+      <if test="jobcpt09 != null">
+        JOBCPT09,
+      </if>
+      <if test="jobcpt10 != null">
+        JOBCPT10,
+      </if>
+      <if test="jobcpt11 != null">
+        JOBCPT11,
+      </if>
+      <if test="jobcpt12 != null">
+        JOBCPT12,
+      </if>
+      <if test="jobcpt13 != null">
+        JOBCPT13,
+      </if>
+      <if test="jobcpt14 != null">
+        JOBCPT14,
+      </if>
+      <if test="jobcpt15 != null">
+        JOBCPT15,
+      </if>
+      <if test="jobcpt16 != null">
+        JOBCPT16,
+      </if>
+      <if test="jobcpt17 != null">
+        JOBCPT17,
+      </if>
+      <if test="jobcpt18 != null">
+        JOBCPT18,
+      </if>
+      <if test="jobcpt19 != null">
+        JOBCPT19,
+      </if>
+      <if test="jobcpt20 != null">
+        JOBCPT20,
+      </if>
+      <if test="jobcpt21 != null">
+        JOBCPT21,
+      </if>
+      <if test="jobcpt22 != null">
+        JOBCPT22,
+      </if>
+      <if test="jobcpt23 != null">
+        JOBCPT23,
+      </if>
+      <if test="jobcpt24 != null">
+        JOBCPT24,
+      </if>
+      <if test="jobcpt25 != null">
+        JOBCPT25,
+      </if>
+      <if test="jobcpt26 != null">
+        JOBCPT26,
+      </if>
+      <if test="jobcpt27 != null">
+        JOBCPT27,
+      </if>
+      <if test="jobcpt28 != null">
+        JOBCPT28,
+      </if>
+      <if test="jobcpt29 != null">
+        JOBCPT29,
+      </if>
+      <if test="jobcpt30 != null">
+        JOBCPT30,
+      </if>
+      <if test="jobcpt31 != null">
+        JOBCPT31,
+      </if>
+      <if test="jobcpt32 != null">
+        JOBCPT32,
+      </if>
+      <if test="jobcpt33 != null">
+        JOBCPT33,
+      </if>
+      <if test="jobcpt34 != null">
+        JOBCPT34,
+      </if>
+      <if test="jobcpt35 != null">
+        JOBCPT35,
+      </if>
+      <if test="jobcpt36 != null">
+        JOBCPT36,
+      </if>
+      <if test="jobcpt37 != null">
+        JOBCPT37,
+      </if>
+      <if test="jobcpt38 != null">
+        JOBCPT38,
+      </if>
+      <if test="jobcpt39 != null">
+        JOBCPT39,
+      </if>
+      <if test="jobcpt40 != null">
+        JOBCPT40,
+      </if>
+      <if test="jobcpt41 != null">
+        JOBCPT41,
+      </if>
+      <if test="jobcpt42 != null">
+        JOBCPT42,
+      </if>
+      <if test="jobcpt43 != null">
+        JOBCPT43,
+      </if>
+      <if test="jobcpt44 != null">
+        JOBCPT44,
+      </if>
+      <if test="jobcpt45 != null">
+        JOBCPT45,
+      </if>
+      <if test="jobcpt46 != null">
+        JOBCPT46,
+      </if>
+      <if test="jobcpt47 != null">
+        JOBCPT47,
+      </if>
+      <if test="jobcpt48 != null">
+        JOBCPT48,
+      </if>
+      <if test="jobcpt49 != null">
+        JOBCPT49,
+      </if>
+      <if test="jobcpt50 != null">
+        JOBCPT50,
+      </if>
+      <if test="jobcpt51 != null">
+        JOBCPT51,
+      </if>
+      <if test="jobcpt52 != null">
+        JOBCPT52,
+      </if>
+      <if test="jobcpt53 != null">
+        JOBCPT53,
+      </if>
+      <if test="jobcpt54 != null">
+        JOBCPT54,
+      </if>
+      <if test="jobcpt55 != null">
+        JOBCPT55,
+      </if>
+      <if test="jobcpt56 != null">
+        JOBCPT56,
+      </if>
+      <if test="jobcpt57 != null">
+        JOBCPT57,
+      </if>
+      <if test="jobcpt58 != null">
+        JOBCPT58,
+      </if>
+      <if test="jobcpt59 != null">
+        JOBCPT59,
+      </if>
+      <if test="jobcpt60 != null">
+        JOBCPT60,
+      </if>
+      <if test="cflag != null">
+        CFLAG,
+      </if>
+      <if test="nationcount != null">
+        NATIONCOUNT,
+      </if>
+      <if test="jobcpt61 != null">
+        JOBCPT61,
+      </if>
+      <if test="jobcpt62 != null">
+        JOBCPT62,
+      </if>
+      <if test="jobcpt63 != null">
+        JOBCPT63,
+      </if>
+      <if test="jobcpt64 != null">
+        JOBCPT64,
+      </if>
+      <if test="iscart != null">
+        ISCART,
+      </if>
+      <if test="jobcpt65 != null">
+        JOBCPT65,
+      </if>
+      <if test="jobcpt66 != null">
+        JOBCPT66,
+      </if>
+      <if test="jobcpt67 != null">
+        JOBCPT67,
+      </if>
+      <if test="jobcpt68 != null">
+        JOBCPT68,
+      </if>
+      <if test="jobcpt69 != null">
+        JOBCPT69,
+      </if>
+      <if test="jobcpt70 != null">
+        JOBCPT70,
+      </if>
+      <if test="jobcpt71 != null">
+        JOBCPT71,
+      </if>
+      <if test="jobcpt72 != null">
+        JOBCPT72,
+      </if>
+      <if test="jobcpt73 != null">
+        JOBCPT73,
+      </if>
+      <if test="jobcpt74 != null">
+        JOBCPT74,
+      </if>
+      <if test="jobcpt75 != null">
+        JOBCPT75,
+      </if>
+      <if test="jobcpt76 != null">
+        JOBCPT76,
+      </if>
+      <if test="jobcpt77 != null">
+        JOBCPT77,
+      </if>
+      <if test="jobcpt78 != null">
+        JOBCPT78,
+      </if>
+      <if test="jobcpt79 != null">
+        JOBCPT79,
+      </if>
+      <if test="jobcpt80 != null">
+        JOBCPT80,
+      </if>
+      <if test="cflag1 != null">
+        CFLAG1,
+      </if>
+      <if test="cflag2 != null">
+        CFLAG2,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="jobbegin != null">
+        #{jobbegin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jobno != null">
+        #{jobno,jdbcType=CHAR},
+      </if>
+      <if test="laneno != null">
+        #{laneno,jdbcType=CHAR},
+      </if>
+      <if test="netno != null">
+        #{netno,jdbcType=CHAR},
+      </if>
+      <if test="staffno != null">
+        #{staffno,jdbcType=CHAR},
+      </if>
+      <if test="siteno != null">
+        #{siteno,jdbcType=CHAR},
+      </if>
+      <if test="lanetype != null">
+        #{lanetype,jdbcType=CHAR},
+      </if>
+      <if test="lanemode != null">
+        #{lanemode,jdbcType=CHAR},
+      </if>
+      <if test="cetc != null">
+        #{cetc,jdbcType=CHAR},
+      </if>
+      <if test="jobend != null">
+        #{jobend,jdbcType=TIMESTAMP},
+      </if>
+      <if test="squadno != null">
+        #{squadno,jdbcType=CHAR},
+      </if>
+      <if test="shiftno != null">
+        #{shiftno,jdbcType=CHAR},
+      </if>
+      <if test="staffname != null">
+        #{staffname,jdbcType=CHAR},
+      </if>
+      <if test="todstaffno != null">
+        #{todstaffno,jdbcType=CHAR},
+      </if>
+      <if test="toddate != null">
+        #{toddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="todno != null">
+        #{todno,jdbcType=CHAR},
+      </if>
+      <if test="traffictotal != null">
+        #{traffictotal,jdbcType=DECIMAL},
+      </if>
+      <if test="revenuetotal != null">
+        #{revenuetotal,jdbcType=DECIMAL},
+      </if>
+      <if test="faretbltimeno != null">
+        #{faretbltimeno,jdbcType=VARCHAR},
+      </if>
+      <if test="operatedate != null">
+        #{operatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="violoffduty != null">
+        #{violoffduty,jdbcType=DECIMAL},
+      </if>
+      <if test="violreversing != null">
+        #{violreversing,jdbcType=DECIMAL},
+      </if>
+      <if test="violwoodtruck != null">
+        #{violwoodtruck,jdbcType=DECIMAL},
+      </if>
+      <if test="violtrue != null">
+        #{violtrue,jdbcType=DECIMAL},
+      </if>
+      <if test="violnomotif != null">
+        #{violnomotif,jdbcType=DECIMAL},
+      </if>
+      <if test="violinhurry != null">
+        #{violinhurry,jdbcType=DECIMAL},
+      </if>
+      <if test="mopblacklist != null">
+        #{mopblacklist,jdbcType=DECIMAL},
+      </if>
+      <if test="tcscexpired != null">
+        #{tcscexpired,jdbcType=DECIMAL},
+      </if>
+      <if test="mopexpired != null">
+        #{mopexpired,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt01 != null">
+        #{jobcpt01,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt02 != null">
+        #{jobcpt02,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt03 != null">
+        #{jobcpt03,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt04 != null">
+        #{jobcpt04,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt05 != null">
+        #{jobcpt05,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt06 != null">
+        #{jobcpt06,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt07 != null">
+        #{jobcpt07,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt08 != null">
+        #{jobcpt08,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt09 != null">
+        #{jobcpt09,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt10 != null">
+        #{jobcpt10,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt11 != null">
+        #{jobcpt11,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt12 != null">
+        #{jobcpt12,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt13 != null">
+        #{jobcpt13,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt14 != null">
+        #{jobcpt14,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt15 != null">
+        #{jobcpt15,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt16 != null">
+        #{jobcpt16,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt17 != null">
+        #{jobcpt17,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt18 != null">
+        #{jobcpt18,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt19 != null">
+        #{jobcpt19,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt20 != null">
+        #{jobcpt20,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt21 != null">
+        #{jobcpt21,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt22 != null">
+        #{jobcpt22,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt23 != null">
+        #{jobcpt23,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt24 != null">
+        #{jobcpt24,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt25 != null">
+        #{jobcpt25,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt26 != null">
+        #{jobcpt26,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt27 != null">
+        #{jobcpt27,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt28 != null">
+        #{jobcpt28,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt29 != null">
+        #{jobcpt29,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt30 != null">
+        #{jobcpt30,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt31 != null">
+        #{jobcpt31,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt32 != null">
+        #{jobcpt32,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt33 != null">
+        #{jobcpt33,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt34 != null">
+        #{jobcpt34,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt35 != null">
+        #{jobcpt35,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt36 != null">
+        #{jobcpt36,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt37 != null">
+        #{jobcpt37,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt38 != null">
+        #{jobcpt38,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt39 != null">
+        #{jobcpt39,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt40 != null">
+        #{jobcpt40,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt41 != null">
+        #{jobcpt41,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt42 != null">
+        #{jobcpt42,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt43 != null">
+        #{jobcpt43,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt44 != null">
+        #{jobcpt44,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt45 != null">
+        #{jobcpt45,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt46 != null">
+        #{jobcpt46,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt47 != null">
+        #{jobcpt47,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt48 != null">
+        #{jobcpt48,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt49 != null">
+        #{jobcpt49,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt50 != null">
+        #{jobcpt50,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt51 != null">
+        #{jobcpt51,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt52 != null">
+        #{jobcpt52,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt53 != null">
+        #{jobcpt53,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt54 != null">
+        #{jobcpt54,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt55 != null">
+        #{jobcpt55,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt56 != null">
+        #{jobcpt56,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt57 != null">
+        #{jobcpt57,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt58 != null">
+        #{jobcpt58,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt59 != null">
+        #{jobcpt59,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt60 != null">
+        #{jobcpt60,jdbcType=DECIMAL},
+      </if>
+      <if test="cflag != null">
+        #{cflag,jdbcType=CHAR},
+      </if>
+      <if test="nationcount != null">
+        #{nationcount,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt61 != null">
+        #{jobcpt61,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt62 != null">
+        #{jobcpt62,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt63 != null">
+        #{jobcpt63,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt64 != null">
+        #{jobcpt64,jdbcType=DECIMAL},
+      </if>
+      <if test="iscart != null">
+        #{iscart,jdbcType=CHAR},
+      </if>
+      <if test="jobcpt65 != null">
+        #{jobcpt65,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt66 != null">
+        #{jobcpt66,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt67 != null">
+        #{jobcpt67,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt68 != null">
+        #{jobcpt68,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt69 != null">
+        #{jobcpt69,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt70 != null">
+        #{jobcpt70,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt71 != null">
+        #{jobcpt71,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt72 != null">
+        #{jobcpt72,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt73 != null">
+        #{jobcpt73,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt74 != null">
+        #{jobcpt74,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt75 != null">
+        #{jobcpt75,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt76 != null">
+        #{jobcpt76,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt77 != null">
+        #{jobcpt77,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt78 != null">
+        #{jobcpt78,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt79 != null">
+        #{jobcpt79,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt80 != null">
+        #{jobcpt80,jdbcType=DECIMAL},
+      </if>
+      <if test="cflag1 != null">
+        #{cflag1,jdbcType=CHAR},
+      </if>
+      <if test="cflag2 != null">
+        #{cflag2,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mydao.split.entity.DataJob">
+    update DATA_JOB
+    <set>
+      <if test="lanetype != null">
+        LANETYPE = #{lanetype,jdbcType=CHAR},
+      </if>
+      <if test="lanemode != null">
+        LANEMODE = #{lanemode,jdbcType=CHAR},
+      </if>
+      <if test="cetc != null">
+        CETC = #{cetc,jdbcType=CHAR},
+      </if>
+      <if test="jobend != null">
+        JOBEND = #{jobend,jdbcType=TIMESTAMP},
+      </if>
+      <if test="squadno != null">
+        SQUADNO = #{squadno,jdbcType=CHAR},
+      </if>
+      <if test="shiftno != null">
+        SHIFTNO = #{shiftno,jdbcType=CHAR},
+      </if>
+      <if test="staffname != null">
+        STAFFNAME = #{staffname,jdbcType=CHAR},
+      </if>
+      <if test="todstaffno != null">
+        TODSTAFFNO = #{todstaffno,jdbcType=CHAR},
+      </if>
+      <if test="toddate != null">
+        TODDATE = #{toddate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="todno != null">
+        TODNO = #{todno,jdbcType=CHAR},
+      </if>
+      <if test="traffictotal != null">
+        TRAFFICTOTAL = #{traffictotal,jdbcType=DECIMAL},
+      </if>
+      <if test="revenuetotal != null">
+        REVENUETOTAL = #{revenuetotal,jdbcType=DECIMAL},
+      </if>
+      <if test="faretbltimeno != null">
+        FARETBLTIMENO = #{faretbltimeno,jdbcType=VARCHAR},
+      </if>
+      <if test="operatedate != null">
+        OPERATEDATE = #{operatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="violoffduty != null">
+        VIOLOFFDUTY = #{violoffduty,jdbcType=DECIMAL},
+      </if>
+      <if test="violreversing != null">
+        VIOLREVERSING = #{violreversing,jdbcType=DECIMAL},
+      </if>
+      <if test="violwoodtruck != null">
+        VIOLWOODTRUCK = #{violwoodtruck,jdbcType=DECIMAL},
+      </if>
+      <if test="violtrue != null">
+        VIOLTRUE = #{violtrue,jdbcType=DECIMAL},
+      </if>
+      <if test="violnomotif != null">
+        VIOLNOMOTIF = #{violnomotif,jdbcType=DECIMAL},
+      </if>
+      <if test="violinhurry != null">
+        VIOLINHURRY = #{violinhurry,jdbcType=DECIMAL},
+      </if>
+      <if test="mopblacklist != null">
+        MOPBLACKLIST = #{mopblacklist,jdbcType=DECIMAL},
+      </if>
+      <if test="tcscexpired != null">
+        TCSCEXPIRED = #{tcscexpired,jdbcType=DECIMAL},
+      </if>
+      <if test="mopexpired != null">
+        MOPEXPIRED = #{mopexpired,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt01 != null">
+        JOBCPT01 = #{jobcpt01,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt02 != null">
+        JOBCPT02 = #{jobcpt02,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt03 != null">
+        JOBCPT03 = #{jobcpt03,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt04 != null">
+        JOBCPT04 = #{jobcpt04,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt05 != null">
+        JOBCPT05 = #{jobcpt05,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt06 != null">
+        JOBCPT06 = #{jobcpt06,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt07 != null">
+        JOBCPT07 = #{jobcpt07,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt08 != null">
+        JOBCPT08 = #{jobcpt08,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt09 != null">
+        JOBCPT09 = #{jobcpt09,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt10 != null">
+        JOBCPT10 = #{jobcpt10,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt11 != null">
+        JOBCPT11 = #{jobcpt11,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt12 != null">
+        JOBCPT12 = #{jobcpt12,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt13 != null">
+        JOBCPT13 = #{jobcpt13,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt14 != null">
+        JOBCPT14 = #{jobcpt14,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt15 != null">
+        JOBCPT15 = #{jobcpt15,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt16 != null">
+        JOBCPT16 = #{jobcpt16,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt17 != null">
+        JOBCPT17 = #{jobcpt17,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt18 != null">
+        JOBCPT18 = #{jobcpt18,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt19 != null">
+        JOBCPT19 = #{jobcpt19,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt20 != null">
+        JOBCPT20 = #{jobcpt20,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt21 != null">
+        JOBCPT21 = #{jobcpt21,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt22 != null">
+        JOBCPT22 = #{jobcpt22,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt23 != null">
+        JOBCPT23 = #{jobcpt23,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt24 != null">
+        JOBCPT24 = #{jobcpt24,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt25 != null">
+        JOBCPT25 = #{jobcpt25,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt26 != null">
+        JOBCPT26 = #{jobcpt26,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt27 != null">
+        JOBCPT27 = #{jobcpt27,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt28 != null">
+        JOBCPT28 = #{jobcpt28,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt29 != null">
+        JOBCPT29 = #{jobcpt29,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt30 != null">
+        JOBCPT30 = #{jobcpt30,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt31 != null">
+        JOBCPT31 = #{jobcpt31,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt32 != null">
+        JOBCPT32 = #{jobcpt32,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt33 != null">
+        JOBCPT33 = #{jobcpt33,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt34 != null">
+        JOBCPT34 = #{jobcpt34,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt35 != null">
+        JOBCPT35 = #{jobcpt35,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt36 != null">
+        JOBCPT36 = #{jobcpt36,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt37 != null">
+        JOBCPT37 = #{jobcpt37,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt38 != null">
+        JOBCPT38 = #{jobcpt38,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt39 != null">
+        JOBCPT39 = #{jobcpt39,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt40 != null">
+        JOBCPT40 = #{jobcpt40,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt41 != null">
+        JOBCPT41 = #{jobcpt41,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt42 != null">
+        JOBCPT42 = #{jobcpt42,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt43 != null">
+        JOBCPT43 = #{jobcpt43,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt44 != null">
+        JOBCPT44 = #{jobcpt44,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt45 != null">
+        JOBCPT45 = #{jobcpt45,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt46 != null">
+        JOBCPT46 = #{jobcpt46,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt47 != null">
+        JOBCPT47 = #{jobcpt47,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt48 != null">
+        JOBCPT48 = #{jobcpt48,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt49 != null">
+        JOBCPT49 = #{jobcpt49,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt50 != null">
+        JOBCPT50 = #{jobcpt50,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt51 != null">
+        JOBCPT51 = #{jobcpt51,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt52 != null">
+        JOBCPT52 = #{jobcpt52,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt53 != null">
+        JOBCPT53 = #{jobcpt53,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt54 != null">
+        JOBCPT54 = #{jobcpt54,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt55 != null">
+        JOBCPT55 = #{jobcpt55,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt56 != null">
+        JOBCPT56 = #{jobcpt56,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt57 != null">
+        JOBCPT57 = #{jobcpt57,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt58 != null">
+        JOBCPT58 = #{jobcpt58,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt59 != null">
+        JOBCPT59 = #{jobcpt59,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt60 != null">
+        JOBCPT60 = #{jobcpt60,jdbcType=DECIMAL},
+      </if>
+      <if test="cflag != null">
+        CFLAG = #{cflag,jdbcType=CHAR},
+      </if>
+      <if test="nationcount != null">
+        NATIONCOUNT = #{nationcount,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt61 != null">
+        JOBCPT61 = #{jobcpt61,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt62 != null">
+        JOBCPT62 = #{jobcpt62,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt63 != null">
+        JOBCPT63 = #{jobcpt63,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt64 != null">
+        JOBCPT64 = #{jobcpt64,jdbcType=DECIMAL},
+      </if>
+      <if test="iscart != null">
+        ISCART = #{iscart,jdbcType=CHAR},
+      </if>
+      <if test="jobcpt65 != null">
+        JOBCPT65 = #{jobcpt65,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt66 != null">
+        JOBCPT66 = #{jobcpt66,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt67 != null">
+        JOBCPT67 = #{jobcpt67,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt68 != null">
+        JOBCPT68 = #{jobcpt68,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt69 != null">
+        JOBCPT69 = #{jobcpt69,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt70 != null">
+        JOBCPT70 = #{jobcpt70,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt71 != null">
+        JOBCPT71 = #{jobcpt71,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt72 != null">
+        JOBCPT72 = #{jobcpt72,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt73 != null">
+        JOBCPT73 = #{jobcpt73,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt74 != null">
+        JOBCPT74 = #{jobcpt74,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt75 != null">
+        JOBCPT75 = #{jobcpt75,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt76 != null">
+        JOBCPT76 = #{jobcpt76,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt77 != null">
+        JOBCPT77 = #{jobcpt77,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt78 != null">
+        JOBCPT78 = #{jobcpt78,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt79 != null">
+        JOBCPT79 = #{jobcpt79,jdbcType=DECIMAL},
+      </if>
+      <if test="jobcpt80 != null">
+        JOBCPT80 = #{jobcpt80,jdbcType=DECIMAL},
+      </if>
+      <if test="cflag1 != null">
+        CFLAG1 = #{cflag1,jdbcType=CHAR},
+      </if>
+      <if test="cflag2 != null">
+        CFLAG2 = #{cflag2,jdbcType=CHAR},
+      </if>
+    </set>
+    where JOBBEGIN = #{jobbegin,jdbcType=TIMESTAMP}
+      and JOBNO = #{jobno,jdbcType=CHAR}
+      and LANENO = #{laneno,jdbcType=CHAR}
+      and NETNO = #{netno,jdbcType=CHAR}
+      and STAFFNO = #{staffno,jdbcType=CHAR}
+      and SITENO = #{siteno,jdbcType=CHAR}
+  </update>
+
+  <select id="selectTotalTrific" parameterType="java.util.Map" resultMap="BaseResultMap">
+    select sum(TRAFFICTOTAL) from data_job t where 1 = 1
+    <if test="todDate != '' and todDate != null">
+      and to_char(t.toddate,'yyyy-MM-dd') = #{todDate}
+    </if>
+    <if test="shiftNo != null and shiftno != ''">
+      and t.shiftno = #{shiftNo}
+    </if>
+    <if test="netSiteNo != null and netSiteNo != ''">
+      and t.netno||t.siteno = #{netSiteNo}
+    </if>
+  </select>
+
+</mapper>

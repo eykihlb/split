@@ -5,6 +5,9 @@ import com.mydao.split.entity.SplitUser;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.Map;
+
 @Mapper
 @Component
 public interface SplitUserMapper {
@@ -17,4 +20,8 @@ public interface SplitUserMapper {
     int updateByPrimaryKeySelective(SplitUser record);
 
     SplitUser getByUserName(String userName);
+
+    List<SplitUser> findList(Map<String,Object> map);
+
+    Integer count(Map<String,Object> map);
 }

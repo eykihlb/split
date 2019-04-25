@@ -13,6 +13,46 @@ public class SplitUser implements Serializable{
 
     private String netSiteNo;
 
+    private String nickName;
+
+    private String siteIp;
+
+    private Integer page;
+
+    private Integer limit;
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getSiteIp() {
+        return siteIp;
+    }
+
+    public void setSiteIp(String siteIp) {
+        this.siteIp = siteIp;
+    }
+
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     public String getId() {
         return id;
     }
